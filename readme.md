@@ -7,3 +7,4 @@
 * Yoast
 * Lambda Test
 * Contact Form 7
+* Easy Google Fonts
