@@ -48,13 +48,17 @@ a {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+ {
   font-family: 'Titillium Web', sans-serif;
 }
 
 h1 {
   font-weight: 700;
   font-size: 6rem;
+  line-height: 5.5rem;
 }
 
 h2 {
@@ -67,18 +71,27 @@ h3 {
   font-size: 2rem;
 }
 
-p {
-  font-size: 1.125rem;
+h4 {
+  font-weight: 600;
+  font-size: 2rem;
 }
 
-h4,
-h5,
+h5 {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 200;
+  line-height: 2.5;
+}
+
 h6,
 p,
 a {
   font-family: 'Nunito Sans', sans-serif;
 }
-
 
 /* variable styles */
 /* ===================== */
@@ -124,6 +137,49 @@ a {
   background: var(--grey);
 }
 
+/* padding classes :) */
+/* ===================== */
+
+.content-padded {
+  padding: 100px;
+}
+
+.pt {
+  padding-top: 70px;
+}
+
+.mt {
+  margin-top: 70px;
+}
+
+/* buttons */
+/* ===================== */
+.cc-btn {
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-family: 'Titillium Web', sans-serif;
+  color: var(--grey);
+  cursor: pointer;
+  transition: all 280ms ease-in-out;
+}
+
+.cc-btn span {
+  position: relative;
+  top: 4px;
+  transition: all 280ms ease-in-out;
+}
+
+.cc-btn:hover {
+  color: var(--main);
+  transition: all 280ms ease-in-out;
+}
+
+.cc-btn:hover span {
+  margin-left: 5px;
+  transition: all 280ms ease-in-out;
+}
+
 /* header.php */
 /* ====================================================== */
 
@@ -151,8 +207,13 @@ nav {
   margin-left: 30px;
 }
 
+.menu-item .nav-link {
+  transition: all 280ms ease-in-out;
+}
+
 .menu-item .nav-link:hover,
 .menu-item .nav-link:active {
+  transition: all 280ms ease-in-out;
   color: var(--main);
 }
 
@@ -166,10 +227,10 @@ nav {
   background-position: right 123% bottom 81%;
 }
 
-.hero-txt {
+/* .hero-txt {
   margin-top: 32%;
   margin-left: 60%;
-}
+} */
 /* version 1 */
 
 .hero-txt {
@@ -178,4 +239,98 @@ nav {
 }
 /* version 2 */
 
-/* could make a dropdown of positions! that'd be kind of cool! oooohoo */
+/* NOTE could make a dropdown of positions! that'd be kind of cool! oooohoo */
+
+.middle-section {
+  /* height: 400px; */
+}
+
+.ft-video-col {
+  height: 300px;
+}
+
+.fp-video iframe {
+  display: block;
+  width: 100%;
+  height: 30vw;
+  border: none;
+}
+
+.sub-video {
+  margin-top: 100px;
+}
+
+.tag {
+  width: auto;
+  padding: 2px 20px;
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 200;
+}
+
+#services {
+  height: 100vh;
+}
+
+.one-service {
+  display: flex;
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  /* align-items: center; */
+  transition: all 1s ease-in-out;
+}
+
+.service-overlay {
+  /* height: 100%; */
+  transform: scaleY(0);
+  transform-origin: bottom;
+  padding: 20px;
+  opacity: 1;
+  z-index: 99;
+  transition: all 1s ease-in-out;
+}
+
+.one-service:hover .service-overlay {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: all 1s ease-in-out;
+}
+
+.service-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale();
+}
+
+
+/* media queries */
+/* ====================================================== */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .hero-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-position: center;
+  }
+
+  .fp-video iframe {
+    display: block;
+    width: 100%;
+    height: 100vw;
+    border: none;
+  }
+  .sub-video {
+    margin-top: 0;
+  }
+}

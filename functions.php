@@ -6,7 +6,6 @@ add_theme_support('post-thumbnails');
 add_theme_support('woocommerce');
 add_theme_support('post-formats', array('video'));
 
-
 // excerpt length
 // =========================================
 function new_excerpt_length() {
@@ -29,6 +28,26 @@ register_nav_menus(['primary' => 'Primary Navigation']);
 
 // setting up work posttype
 // =========================================
+function create_work_post() {
+  $args = array(
+    'labels' => array(
+      'name' => 'Our Work',
+      'singular_name' => 'Work'
+    ),
+    'public' => true,
+    'menu_icon' => 'dashicons-portfolio',
+    'supports' => array('title', 'editor', 'thumbnail', 'video'),
+    'menu-position' => 20
+  );
+  register_post_type('work', $args);
+}
+
+add_action('init', 'create_work_post');
+
+// // Post Type Support - Adding Videos to "Work" Posttype
+// // ========
+add_post_type_support('work', 'post-formats');
+
 
 // setting up services posttype
 // =========================================
