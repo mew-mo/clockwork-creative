@@ -72,11 +72,14 @@ h3 {
 }
 
 h4 {
+  font-family: 'Titillium Web', sans-serif;
+  /* note- had to rewrite this rule because a strange override was occurring */
   font-weight: 600;
   font-size: 2rem;
 }
 
 h5 {
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
 }
@@ -227,22 +230,9 @@ nav {
   background-position: right 123% bottom 81%;
 }
 
-/* .hero-txt {
-  margin-top: 32%;
-  margin-left: 60%;
-} */
-/* version 1 */
-
 .hero-txt {
   margin-top: 5%;
   margin-left: 2%;
-}
-/* version 2 */
-
-/* NOTE could make a dropdown of positions! that'd be kind of cool! oooohoo */
-
-.middle-section {
-  /* height: 400px; */
 }
 
 .ft-video-col {
@@ -280,23 +270,21 @@ nav {
   width: 100%;
   overflow: hidden;
   justify-content: center;
-  /* align-items: center; */
+  align-items: flex-end;
   transition: all 1s ease-in-out;
 }
 
 .service-overlay {
-  /* height: 100%; */
-  transform: scaleY(0);
-  transform-origin: bottom;
+  max-height: 0;
+  opacity: 0;
   padding: 20px;
-  opacity: 1;
   z-index: 99;
   transition: all 1s ease-in-out;
 }
 
 .one-service:hover .service-overlay {
-  transform: scaleY(1);
-  transform-origin: bottom;
+  opacity: 1;
+  max-height: 100%;
   transition: all 1s ease-in-out;
 }
 
@@ -308,14 +296,71 @@ nav {
   object-fit: cover;
   object-position: center;
   filter: grayscale();
+  transition: all 1s ease-in-out;
 }
 
+.one-service:hover .service-img {
+  filter: none;
+  transition: all 1s ease-in-out;
+}
+
+/* footer.php */
+/* ====================================================== */
+
+footer {
+  height: 250px;
+}
+
+.info-row {
+  padding-top: 30px;
+}
+
+.fa {
+  font-size: 30px;
+}
+
+.socials-col {
+  margin-top: 30px;
+}
+
+.social-icon {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 30px 30px 0;
+  transition: all 280ms ease-in-out;
+}
+
+.social-icon i {
+  margin-top: 3px;
+}
+
+.social-icon:hover {
+  background: var(--main);
+  transition: all 280ms ease-in-out;
+}
+
+/* footer.php */
+/* ====================================================== */
+.abt-img {
+  background-image: url(img/1.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
 
 /* media queries */
 /* ====================================================== */
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+
+  /* header.php */
+  /* ================ */
+
   .hero-img {
     display: flex;
     justify-content: center;
@@ -333,4 +378,36 @@ nav {
   .sub-video {
     margin-top: 0;
   }
+
+  .middle-section h5,
+  .tag {
+    text-align: center;
+  }
+
+  iframe:first-child {
+    padding-top: 30px;
+  }
+
+  iframe:last-child {
+    margin-top: -200px;
+  }
+
+  /* footer.php */
+  /* ================ */
+
+  footer {
+    height: auto;
+    text-align: center;
+  }
+
+  .socials-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-icon {
+    margin: 0 30px 30px 30px;
+  }
+
 }

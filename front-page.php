@@ -24,8 +24,8 @@
 
   <div class="col-md-6 col-sm-12">
     <div class="content-padded">
-      <h4 class="col-main">The Clockwork Creative Team...</h4>
-      <p class="col-dark pt">Are a talented collective of experienced filmmakers, photographers, editors, and writers. From concept to completion, we make compelling stories to bring people into your world and create an impact.</p>
+      <h4 class="col-main"><?php echo get_theme_mod('middle_title');?></h4>
+      <p class="col-dark pt"><?php echo get_theme_mod('middle_content');?></p>
 
       <h5 class="col-dark pt">We Specialise In</h5>
       <?php
@@ -43,6 +43,7 @@
         arrow_right_alt
         </span>
       </div>
+      <!-- NOTE: LINK THIS TO A PAGE BC YOU NEED TO :) -->
     </div>
   </div>
   <!-- txt content end -->
@@ -108,7 +109,7 @@ query_posts(
 );
 ?>
 
-<div class="row" id="services">
+<div class="row g-0" id="services">
   <?php
   if ( have_posts() ) :
     while (have_posts() ) : the_post();
@@ -128,8 +129,6 @@ query_posts(
   else : echo '<p> No services have been posted. </p>';
   endif
   ?>
-<!-- anotha loop here for tha Servicez Brotha -->
-<!-- oohoo.... oh boy -->
 
 </div>
 

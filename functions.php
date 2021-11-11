@@ -80,7 +80,7 @@ function nav_content_customize($wp_customize) {
   // // ========
 
   $wp_customize->add_setting('custom_logo', array(
-    'default' => 'img/logo.png'
+    'default' => ''
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_logo', array(
@@ -177,7 +177,7 @@ function fp_content_customize($wp_customize) {
   // // Hero Image
   // // ========
   $wp_customize->add_setting('custom_hero_img', array(
-    'default' => 'img/hero.jpg'
+    'default' => ''
   ));
 
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_bg_img', array(
@@ -195,6 +195,7 @@ function fp_content_customize($wp_customize) {
 
   $wp_customize->add_control('title', array(
     'label' => 'Enter Page Title',
+    'description' => 'If you want a word to be coloured, put it where the word "Clockwork" is and do not delete the "spans" around it.',
     'section' => 'fp_section',
     'settings' => 'title',
     'type' => 'text',
@@ -245,24 +246,55 @@ function fp_content_customize($wp_customize) {
     )
   ));
 
-  // // Margins For Header Text (left/right)
+  // // Heading Text Position
   // // ========
 
-  $wp_customize->add_setting('y-axis', array(
-    'default' => 0
+  $wp_customize->add_setting('heading-pos', array(
+    'default' => 'topleft'
   ));
 
-  $wp_customize->add_control('y-axis', array(
-    'label' => 'Y-Axis Position of the Heading Text',
-    'description' => 'Negative numbers move up, positive numbers move down.',
+  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'heading-pos', array(
+    'label' => 'Position of the Front Page Title',
+    'settings' => 'heading-pos',
+    'priority' => 60,
     'section' => 'fp_section',
-    'settings' => 'my_custom_number',
-    'type' => 'number',
-    'input_attrs' => array(
-      'min' => -1000,
-      'max' => 1000
-    ),
-    'priority' => 50
+    'type' => 'select',
+    'choices' => array(
+      'topleft' => 'Top Left',
+      'topright' => 'Top Right',
+      'bottomright' => 'Bottom Right',
+      'bottomleft' => 'Bottom Left',
+      'center' => 'Center'
+    )
+  )));
+
+
+    // // Intro txt title
+    // // ========
+    $wp_customize->add_setting('middle_title', array(
+      'default' => 'The Clockwork Creative Team...'
+    ));
+
+    $wp_customize->add_control('middle_title', array(
+      'label' => 'Middle Section Title',
+      'section' => 'fp_section',
+      'settings' => 'middle_title',
+      'type' => 'text',
+      'priority' => 70
+    ));
+
+  //   // Intro txt content
+  //   // ========
+    $wp_customize->add_setting('middle_content', array(
+      'default' => 'Are a talented collective of experienced filmmakers, photographers, editors, and writers. From concept to completion, we make compelling stories to bring people into your world and create an impact.'
+    ));
+
+    $wp_customize->add_control('middle_content', array(
+      'label' => 'Middle Section Content',
+      'section' => 'fp_section',
+      'settings' => 'middle_content',
+      'type' => 'textarea',
+      'priority' => 80
   ));
 
 } //end funct
@@ -273,6 +305,8 @@ function hero_css() {
   $title_col = get_theme_mod('title_col');
   $tag_col = get_theme_mod('tag_col');
   $hero_img = get_theme_mod('custom_hero_img');
+  $position = get_theme_mod('heading-pos');
+  $align = get_theme_mod('heading-align');
   ?>
   <style type="text/css">
     .hero-img {
@@ -294,13 +328,62 @@ function hero_css() {
     .tagline {
       color: <?php echo $tag_col?>;
     }
+
+    <?php
+    if ($position == 'topleft') { ?>
+      .hero-txt {
+        margin-top: 5%;
+        margin-left: 2%;
+      }
+    <?php
+    }
+    ?>
+
+    <?php
+    if ($position == 'bottomleft') { ?>
+      .hero-txt {
+        margin-top: 32%;
+        margin-left: 2%;
+      }
+    <?php
+    }
+    ?>
+
+    <?php
+    if ($position == 'topright') { ?>
+      .hero-txt {
+        margin-top: 2%;
+        margin-left: 60%;
+      }
+    <?php
+    }
+    ?>
+
+    <?php
+    if ($position == 'bottomright') { ?>
+      .hero-txt {
+        margin-top: 32%;
+        margin-left: 60%;
+      }
+    <?php
+    }
+    ?>
+
+    <?php
+    if ($position == 'center') { ?>
+      .hero-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    <?php
+    }
+    ?>
+
   </style>
   <?php
 }
 
 add_action('wp_head','hero_css');
-
-
-
 
 ?>
