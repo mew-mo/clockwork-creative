@@ -258,9 +258,9 @@ nav {
   font-weight: 200;
 }
 
-#services {
+/* #services {
   height: 100vh;
-}
+} */
 
 .one-service {
   display: flex;
@@ -272,6 +272,10 @@ nav {
   justify-content: center;
   align-items: flex-end;
   transition: all 1s ease-in-out;
+}
+
+.service-col {
+  height: 100vh;
 }
 
 .service-overlay {
@@ -303,6 +307,26 @@ nav {
   filter: none;
   transition: all 1s ease-in-out;
 }
+
+/* about-template.php */
+/* ====================================================== */
+
+.abt-img {
+  background-image: url(img/1.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  transition: all 1s ease-in-out;
+}
+
+.abt-txt {
+  transition: all 1s ease-in-out;
+}
+
+.abt-txt-container h4 {
+  text-align: right;
+}
+
 
 /* footer.php */
 /* ====================================================== */
@@ -341,15 +365,6 @@ footer {
 .social-icon:hover {
   background: var(--main);
   transition: all 280ms ease-in-out;
-}
-
-/* footer.php */
-/* ====================================================== */
-.abt-img {
-  background-image: url(img/1.jpg);
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
 }
 
 /* media queries */
@@ -409,5 +424,6 @@ footer {
   .social-icon {
     margin: 0 30px 30px 30px;
   }
+  /* what. why isnt this */
 
 }
