@@ -10,26 +10,31 @@ Template Name: About Us
 
  <div class="row">
 
-   <div class="col-md-6 col-sm-12 abt-img">
+   <div class="col-md-6 col-sm-12 abt-img-container">
+     <div class="abt-img">
+
+     </div>
      <!-- we can make it so that they clip to some container...??? -->
    </div>
 
    <div class="col-md-6 col-sm-12">
-     <div class="content-padded abt-txt-container">
+     <div class="content-padded">
+       <div class="abt-txt-container">
+         <h4 class="col-main">About Us</h4>
 
-       <h4 class="col-main">About Us</h4>
+         <div class="abt-txt col-dark mt">
+           <p>Clockwork Creative are very good at stories. We are experts in narrative visual storytelling — from feature-length documentary to 15-second snippets for social sharing. Our projects run like clockwork if clocks were known for working with intelligence, sensitivity, flexibility, and open communication.</p>
+         </div>
 
-       <div class="abt-txt abt-txt-1 col-dark mt">
-         <p>Clockwork Creative are very good at stories. We are experts in narrative visual storytelling — from feature-length documentary to 15-second snippets for social sharing. Our projects run like clockwork if clocks were known for working with intelligence, sensitivity, flexibility, and open communication.</p>
+         <div class="cc-btn mt col-grey">
+           next
+           <span class="material-icons-outlined">
+           arrow_right_alt
+           </span>
+         </div>
+         <!-- NOTE: LINK THIS TO A PAGE BC YOU NEED TO :) -->
+
        </div>
-
-       <div class="cc-btn mt">
-         next
-         <span class="material-icons-outlined">
-         arrow_right_alt
-         </span>
-       </div>
-       <!-- NOTE: LINK THIS TO A PAGE BC YOU NEED TO :) -->
      </div>
    </div>
 
@@ -48,7 +53,13 @@ Template Name: About Us
      // replace everything with the appropriate php?
 
      if (count == 1) {
-       img.style.backgroundImage = `url(<?php bloginfo('stylesheet_directory');?>/img/1.jpg)`;
+       img.style.backgroundImage = <?php
+        $img1 = get_theme_mod('slide1_img');
+        $txt1 = get_theme_mod('slide1_txt');
+       if ($img1) {
+         echo 'url('. $img1 . ')';
+       } else { ?> 'url(<?php bloginfo('stylesheet_directory');?>/img/1.jpg)';
+       <?php } ?>
        txt.innerHTML = 'Clockwork Creative are very good at stories. We are experts in narrative visual storytelling — from feature-length documentary to 15-second snippets for social sharing. Our projects run like clockwork if clocks were known for working with intelligence, sensitivity, flexibility, and open communication.';
      }
 
@@ -82,7 +93,7 @@ Template Name: About Us
    <div class="content-padded">
      <h4 class="col-main">Our Clients</h4>
      <div class="cc-btn">
-       <a href="<?php get_page_link(get_page_by_path('home'));?>#services">
+       <a href="<?php get_page_link(get_page_by_path('home'));?>#services" class="col-grey">
        services
        <span class="material-icons-outlined">
        arrow_right_alt
@@ -90,7 +101,9 @@ Template Name: About Us
        </a>
      </div>
 
-     <?php if ( function_exists( 'soliloquy' ) ) { soliloquy( '48' ); } ?>
+     <div class="col-12">
+        <?php if ( function_exists( 'soliloquy' ) ) { soliloquy( '48' ); } ?>
+     </div>
    </div>
 
  </div>

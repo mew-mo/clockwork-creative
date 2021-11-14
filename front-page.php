@@ -114,7 +114,7 @@ query_posts(
   if ( have_posts() ) :
     while (have_posts() ) : the_post();
     ?>
-  <div class="col-md-2 col-sm-12 service-col">
+  <div class="col-md-<?php echo get_theme_mod('col-no');?> col-sm-12 service-col">
     <div class="one-service">
       <div class="service-overlay bg-col-light">
         <h4 class="col-main"><?php the_title(); ?></h4>

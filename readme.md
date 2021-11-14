@@ -8,3 +8,11 @@
 * Lambda Test
 * Contact Form 7
 * Easy Google Fonts
+
+## page structure
+*note- menu must be named "main menu" to link to css properly*
+* About Us
+* Team
+* Services
+* Shop
+* Contact Us
