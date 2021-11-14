@@ -8,6 +8,7 @@
 * Lambda Test
 * Contact Form 7
 * Easy Google Fonts
+* Logo Slider WP
 
 ## page structure
 *note- menu must be named "main menu" to link to css properly*

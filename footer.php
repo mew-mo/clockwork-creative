@@ -1,5 +1,4 @@
 <?php wp_footer(); ?>
-<br><br>
 <footer class="bg-col-dark">
   <div class="row info-row">
 

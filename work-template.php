@@ -8,16 +8,13 @@ Template Name: Our Work
 
  <?php get_header(); ?>
 
-<div class="row">
+   <?php
+   query_posts(
+     array(
+       'post_type' => 'work'
+     )
+   );
+   ?>
 
-  <div class="col-md-6 col-sm-12">
-
-  </div>
-
-  <div class="col-md-6 col-sm-12">
-
-  </div>
-
-</div>
 
  <?php get_footer(); ?>

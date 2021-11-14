@@ -25,7 +25,6 @@ add_action('wp_enqueue_scripts', 'import_stylesheet');
 // =========================================
 register_nav_menus(['primary' => 'Primary Navigation']);
 
-
 // setting up work posttype
 // =========================================
 function create_work_post() {
@@ -145,6 +144,37 @@ function save_position_metabox_data($post_id, $post) {
 }
 
 add_action('save_post', 'save_position_metabox_data', 10, 2);
+
+// Creating Work Taxonomy for videos
+// ================================================
+function create_video_taxonomy() {
+  $labels = array(
+    'name' => 'Video Types',
+    'singular_name' => 'Video Type',
+    'search_items' => 'Search Video Types',
+    'all_items' => 'All Video Types',
+    'parent_item' => 'Parent Video Type',
+    'parent_item_colon' => 'Parent Video Type:',
+    'edit_item' => 'Edit Video Type',
+    'update_item' => 'Update Video Type',
+    'add_new_item' => 'Add new Video Type',
+    'new_item_name' => 'New Video Type Name',
+    'menu_name' => 'Video Type'
+  );
+
+  register_taxonomy(
+    'video-type',
+    array('work'),
+    array(
+      'hierarchical' => true,
+      'labels' => $labels,
+      'show_ui' => true
+    )
+  );
+}
+
+add_action('init', 'create_video_taxonomy', 0);
+
 
 // making navbar content editable - nav section
 // =========================================
@@ -432,6 +462,7 @@ function hero_css() {
       .hero-txt {
         margin-top: 5%;
         margin-left: 2%;
+        text-align: left;
       }
     <?php
     }
@@ -442,6 +473,7 @@ function hero_css() {
       .hero-txt {
         margin-top: 32%;
         margin-left: 2%;
+        text-align: left;
       }
     <?php
     }
@@ -452,6 +484,7 @@ function hero_css() {
       .hero-txt {
         margin-top: 2%;
         margin-left: 60%;
+        text-align: right;
       }
     <?php
     }
@@ -462,6 +495,7 @@ function hero_css() {
       .hero-txt {
         margin-top: 32%;
         margin-left: 60%;
+        text-align: right;
       }
     <?php
     }
@@ -473,6 +507,7 @@ function hero_css() {
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
       }
     <?php
     }
@@ -495,14 +530,14 @@ function abt_content_customize($wp_customize) {
 
   // // Title
   // // ========
-  $wp_customize->add_setting('title', array(
+  $wp_customize->add_setting('abt_title', array(
     'default' => 'About Us'
   ));
 
-  $wp_customize->add_control('title', array(
+  $wp_customize->add_control('abt_title', array(
     'label' => 'Enter Page Title',
     'section' => 'abt_section',
-    'settings' => 'title',
+    'settings' => 'abt_title',
     'type' => 'text',
     'priority' => 10
   ));
@@ -597,7 +632,7 @@ function abt_content_customize($wp_customize) {
   $wp_customize->add_control('slide4_content', array(
     'label' => 'Slide 4 Content',
     'section' => 'abt_section',
-    'settings' => 'slide1_content',
+    'settings' => 'slide4_content',
     'type' => 'textarea',
     'priority' => 80
   ));

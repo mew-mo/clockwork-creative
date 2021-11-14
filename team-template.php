@@ -23,16 +23,17 @@ Template Name: Team
  ?>
 
  <?php
- if ( have_posts() ) :
+ if ( have_posts() ) : $postcount = 0;
    while (have_posts() ) : the_post();
+   $postcount++;
    ?>
 
- <div class="row">
+ <div class="row team-member-container" id="mem<?php echo $postcount; ?>">
    <div class="col-12">
      <div class="content-padded">
        <div class="row">
 
-         <div class="col-md-4 col-sm-12 offset-md-2">
+         <div class="col-md-4 col-sm-12 ">
            <div class="team-img-container">
             <?php the_post_thumbnail('medium_large', ['class' => 'team-img']); ?>
            </div>
@@ -41,11 +42,11 @@ Template Name: Team
          <div class="col-md-4 col-sm-12 member-info">
            <div class="info-1">
              <h1 class="col-main"><?php the_title(); ?></h1>
-             <h5 class="col-grey"><?php $position = get_post_meta(get_the_ID(), 'position_input', true);
+             <h5 class="col-grey pt-sm"><?php $position = get_post_meta(get_the_ID(), 'position_input', true);
              if ($position) {
                echo $position;
              } ?></h5>
-             <div class="cc-btn mt col-grey team-more">
+             <div class="cc-btn mt-sm col-grey team-more">
                more
                <span class="material-icons-outlined team-more">
                arrow_right_alt
@@ -58,9 +59,8 @@ Template Name: Team
              if ($position) {
                echo $position;
              } ?></h4>
-             <!-- NOTE need to make a metabox for entering their specific title ^-^ -->
-             <p class="col-dark"><?php the_content();?></p>
-             <div class="cc-btn mt col-grey team-back">
+             <p class="col-dark team-mem-info"><?php the_content();?></p>
+             <div class="cc-btn mt-sm col-grey team-back">
                back
                <span class="material-icons-outlined team-back">
                arrow_right_alt
@@ -68,6 +68,7 @@ Template Name: Team
              </div>
            </div>
            <!-- info 2 -->
+
          </div>
 
        </div>

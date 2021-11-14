@@ -37,13 +37,14 @@
         else : echo '<p> No services have been posted. </p>';
         endif
         ?>
-      <div class="cc-btn mt">
-        more
-        <span class="material-icons-outlined">
-        arrow_right_alt
-        </span>
-      </div>
-      <!-- NOTE: LINK THIS TO A PAGE BC YOU NEED TO :) -->
+      <a href="<?php echo get_page_link(get_page_by_path('our-work'));?>" class="col-grey">
+        <div class="cc-btn mt col-grey">
+          more work
+            <span class="material-icons-outlined" class="col-grey">
+            arrow_right_alt
+            </span>
+        </div>
+      </a>
     </div>
   </div>
   <!-- txt content end -->
@@ -122,6 +123,11 @@ query_posts(
       </div>
       <div class="service-img-container">
         <?php the_post_thumbnail('medium_large', ['class' => 'service-img']); ?>
+      </div>
+    </div>
+    <div class="service-title-wrapper">
+      <div class="service-title">
+        <h5 class="col-main pt-sm"><?php the_title();?></h5>
       </div>
     </div>
   </div>
