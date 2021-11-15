@@ -131,6 +131,7 @@ a {
   background: var(--dark);
 }
 
+body,
 .bg-col-light {
   background: var(--light);
 }
@@ -161,6 +162,7 @@ a {
 .mt-sm {
   margin-top: 30px;
 }
+
 /* buttons */
 /* ===================== */
 .cc-btn {
@@ -187,6 +189,11 @@ a {
 .cc-btn:hover span {
   margin-left: 5px;
   transition: all 280ms ease-in-out;
+}
+
+.term-tag {
+  font-weight: 300;
+  cursor: pointer;
 }
 
 /* header.php */
@@ -252,6 +259,14 @@ iframe {
   overflow: auto;
 }
 
+.ft-row {
+  height: 70%;
+}
+
+.sub-row {
+  height: 30%;
+}
+
 .fp-video iframe {
   display: block;
   width: 100%;
@@ -259,8 +274,14 @@ iframe {
   border: none;
 }
 
+.fp-img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
 .sub-video {
-  margin-top: 100px;
+  margin-top: -140px;
 }
 
 .tag {
@@ -406,18 +427,122 @@ iframe {
 /* work-template.php */
 /* ====================================================== */
 
-.work-row iframe {
-  height: 85%;
+.work-row iframe,
+.work-img {
+  height: 100%;
   width: 100%;
+  background: var(--dark);
+  padding: 70px 0;
 }
 
-.work-img {
-  width: 100%;
-  height: auto;
+.work-row a,
+.work-row p {
+  color: var(--grey);
+  transition: all 280ms ease-in-out;
+}
+
+.work-row a:hover,
+.work-row p:hover {
+  color: var(--main);
+  transition: all 280ms ease-in-out;
 }
 
 .work-title h5 {
   text-align: right;
+}
+
+/* single-work.php */
+/* ====================================================== */
+
+.single-work iframe {
+  height: 100vh;
+  width: 100%;
+  background: var(--dark);
+  padding: 70px 0;
+}
+
+.single-work-img {
+  width: auto;
+  height: auto;
+  background: var(--dark);
+  padding: 70px 0;
+}
+
+.single-work a {
+  color: var(--grey);
+  transition: all 280ms ease-in-out;
+}
+
+.single-work a:hover {
+  color: var(--main);
+  transition: all 280ms ease-in-out;
+}
+
+/* contact-us.php */
+/* ====================================================== */
+
+.contact-txt {
+  margin-left: 70px;
+}
+
+.form-name,
+.form-email,
+.form-msg {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.form-name input#wpforms-128-field_0,
+.form-name input#wpforms-128-field_0-last,
+.form-email input#wpforms-128-field_1,
+.form-msg textarea#wpforms-128-field_2 {
+  margin-top: 30px;
+  border: 1px solid var(--light);
+  box-shadow: -1px 14px 26px -2px rgba(0,0,0,0.36);
+  -webkit-box-shadow: -1px 14px 26px -2px rgba(0,0,0,0.36);
+  -moz-box-shadow: -1px 14px 26px -2px rgba(0,0,0,0.36);
+}
+
+.form-msg textarea#wpforms-128-field_2 {
+  width: 60%;
+}
+
+button#wpforms-submit-128 {
+  background-color: inherit;
+  border: none;
+  padding: 0;
+  margin-top: 30px;
+  color: var(--grey);
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-family: 'Titillium Web', sans-serif;
+  cursor: pointer;
+  transition: all 280ms ease-in-out;
+}
+
+button#wpforms-submit-128:hover {
+  color: var(--main);
+  transition: all 280ms ease-in-out;
+}
+
+/* woocommerce.php */
+/* ====================================================== */
+.woocommerce-info {
+  border-top-color: var(--main);
+}
+
+.woocommerce-info::before {
+  color: var(--main);
+}
+
+.orderby {
+  padding: 10px;
+  color: var(--dark);
+  font-family: 'Nunito Sans', sans-serif;
+  border: 1px solid var(--light);
+  box-shadow: -1px 14px 26px -2px rgba(0,0,0,0.36);
+  -webkit-box-shadow: -1px 14px 26px -2px rgba(0,0,0,0.36);
+  -moz-box-shadow: -1px 14px 26px -2px rgba(0,0,0,0.36);
 }
 
 /* footer.php */
@@ -469,7 +594,7 @@ footer {
     padding: 30px;
   }
 
-  /* header.php */
+  /* front-page.php */
   /* ================ */
 
   .hero-img {
@@ -486,8 +611,21 @@ footer {
     height: 100vw;
     border: none;
   }
+
   .sub-video {
     margin-top: 0;
+  }
+
+  .sub-row {
+    margin-top: 130px;
+  }
+
+  .ft-row {
+    height: auto;
+  }
+
+  .sub-row {
+    height: auto;
   }
 
   .middle-section h5,
@@ -522,6 +660,13 @@ footer {
     padding-right: 20px;
   }
 
+  /* contact-template.php */
+  /* ================ */
+
+  .form-msg textarea#wpforms-128-field_2 {
+    width: 100%;
+  }
+
   /* footer.php */
   /* ================ */
 
@@ -539,6 +684,17 @@ footer {
   .social-icon {
     margin: 0 30px 30px 30px;
   }
-  /* what. why isnt this */
 
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+  /* .ft-row {
+    height: 30%;
+  }
+
+  .sub-row {
+    height: 50%;
+  } */
 }

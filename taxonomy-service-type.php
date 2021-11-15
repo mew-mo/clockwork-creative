@@ -1,27 +1,27 @@
-<?php
-/*
-
-Template Name: Our Work
-
-*/
- ?>
-
- <?php get_header(); ?>
+  <?php get_header(); ?>
 
  <script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
 
 
-   <?php
-   query_posts(
-     array(
-       'post_type' => 'work'
-     )
-   );
-   ?>
    <div class="content-padded">
-     <h4 class="col-main">Our Work</h4>
-   <div class="row work-row">
+     <h4 class="col-main">Showing results for
+         <span class="col-grey term-tag">
+         <?php
+         $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+         echo $term->name;
+         ?>
+      </h4>
 
+      <a href="<?php echo get_page_link(get_page_by_path('our-work'));?>" class="col-grey">
+        <div class="cc-btn mt-sm col-grey">
+          back to our work
+            <span class="material-icons-outlined" class="col-grey">
+            arrow_right_alt
+            </span>
+        </div>
+      </a>
+
+   <div class="row work-row">
 
      <?php
      if ( have_posts() ) : $postcount = 0;

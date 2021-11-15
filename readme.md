@@ -6,14 +6,19 @@
 * W3 Total Cache
 * Yoast
 * Lambda Test
-* Contact Form 7
+* Contact Form by WPForms
 * Easy Google Fonts
 * Logo Slider WP
 
 ## page structure
 *note- menu must be named "main menu" to link to css properly*
+### nav
 * About Us
 * Team
 * Services
 * Shop
 * Contact Us
+
+### hidden
+* Our Work
+* Checkout

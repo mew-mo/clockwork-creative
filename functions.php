@@ -56,7 +56,8 @@ function create_service_post() {
       'name' => 'Services',
       'singular_name' => 'Service'
     ),
-    'public' => true,
+    'public' => false,
+    'show_ui' => true,
     'menu_icon' => 'dashicons-index-card',
     'supports' => array('title', 'editor', 'thumbnail'),
     'menu-position' => 20
@@ -206,7 +207,6 @@ function create_video_taxonomy() {
 
 add_action('init', 'create_video_taxonomy', 0);
 
-
 // making navbar content editable - nav section
 // =========================================
 function nav_content_customize($wp_customize) {
@@ -287,16 +287,16 @@ function nav_css() {
   <style type="text/css">
 
     nav {
-      background: <?php echo $nav_bg_color ?>;
+      background: <?php echo $nav_bg_color ?> !important;
     }
 
     .menu-item .nav-link {
-      color: <?php echo $navlink_color ?>;
+      color: <?php echo $navlink_color ?> !important;
     }
 
     .menu-item .nav-link:hover,
     .menu-item .nav-link:active {
-      color: <?php echo $navlink_hover_color ?>;
+      color: <?php echo $navlink_hover_color ?> !important;
     }
 
   </style>
@@ -304,6 +304,125 @@ function nav_css() {
 }
 
 add_action('wp_head','nav_css');
+
+// making colours editable - colour section
+// =========================================
+function colour_customize($wp_customize) {
+  $wp_customize->add_section('col_section', array(
+    'title' => 'Site Colours', 'custom_setting',
+    'priority' => 5
+  ));
+
+  // // Main colour
+  // // ========
+  $wp_customize->add_setting('main_colorpicker', array(
+    'default' => '#EE4E24'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control(
+    $wp_customize, 'main_colorpicker', array(
+      'label' => 'Main Accent',
+      'section' => 'col_section',
+      'settings' => 'main_colorpicker',
+      'priority' => 0
+    )
+  ));
+
+  // // Background colour
+  // // ========
+  $wp_customize->add_setting('bg_colorpicker', array(
+    'default' => '#f7f7f6'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control(
+    $wp_customize, 'bg_colorpicker', array(
+      'label' => 'Background Colour / Main Light Colour',
+      'section' => 'col_section',
+      'settings' => 'bg_colorpicker',
+      'priority' => 10
+    )
+  ));
+
+  // // Dark colour
+  // // ========
+  $wp_customize->add_setting('dark_colorpicker', array(
+    'default' => '#212121'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control(
+    $wp_customize, 'dark_colorpicker', array(
+      'label' => 'Paragraph Text / Main Dark Colour',
+      'section' => 'col_section',
+      'settings' => 'dark_colorpicker',
+      'priority' => 20
+    )
+  ));
+
+  // // Sub Accent colour / grey
+  // // ========
+  $wp_customize->add_setting('sub_colorpicker', array(
+    'default' => '#A1A1A1'
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control(
+    $wp_customize, 'sub_colorpicker', array(
+      'label' => 'Sub Accent',
+      'section' => 'col_section',
+      'settings' => 'sub_colorpicker',
+      'priority' => 30
+    )
+  ));
+
+} //end funct
+
+add_action('customize_register', 'colour_customize');
+
+function col_css() {
+  $main = get_theme_mod('main_colorpicker');
+  $light = get_theme_mod('bg_colorpicker');
+  $dark = get_theme_mod('dark_colorpicker');
+  $grey = get_theme_mod('sub_colorpicker');
+
+  ?>
+  <style type="text/css">
+
+  .col-main {
+    color: <?php echo $main ?>;
+  }
+
+  .col-dark {
+    color: <?php echo $dark ?>;
+  }
+
+  .col-light {
+    color: <?php echo $light ?>;
+  }
+
+  .col-grey {
+    color: <?php echo $grey ?>;
+  }
+
+  .bg-col-main {
+    background: <?php echo $main ?>;
+  }
+
+  .bg-col-dark {
+    background: <?php echo $dark ?>;
+  }
+
+  .bg-col-light {
+    background: <?php echo $light ?>;
+  }
+
+  .bg-col-grey {
+    background: <?php echo $grey ?>;
+  }
+
+  </style>
+  <?php
+}
+
+add_action('wp_head','col_css');
 
 // making frontpage content editable - fp section
 // =========================================

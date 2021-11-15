@@ -65,21 +65,33 @@
 
     if ($postcount == 1) {
     ?>
-    <div class="row">
+    <div class="row ft-row">
 
       <div class="col-md-12 ft-video-col">
         <div class="fp-video featured-cont">
-          <?php the_content(); ?>
+          <?php
+          if (has_post_format('video')) {
+            echo the_content();
+          } else {
+            echo the_post_thumbnail('medium_large', ['class' => 'fp-img']);
+          }
+          ?>
         </div>
       </div>
-    <!-- featured video -->
+    <!-- featured video/img -->
     </div>
-    <div class="row">
+    <div class="row sub-row">
   <?php } ?>
   <?php if ($postcount == 2 || $postcount == 3) { ?>
       <div class="col-md-6 col-sm-12 video-col">
         <div class="fp-video sub-video">
-          <?php the_content(); ?>
+          <?php
+          if (has_post_format('video')) {
+            echo the_content();
+          } else {
+            echo the_post_thumbnail('medium_large', ['class' => 'work-img']);
+          }
+          ?>
         </div>
       </div>
     <?php } ?>
@@ -94,10 +106,12 @@
 <!-- middle section row ends -->
 
 <script>
-  var iframes  = document.querySelectorAll('.fp-video iframe');
-  console.log(iframes);
-  for (var i = 0; i < iframes.length; i++) {
-    $(iframes[i]).unwrap();
+  if (document.querySelector('iframe')) {
+    var iframes  = document.querySelectorAll('iframe');
+    console.log(iframes);
+    for (var i = 0; i < iframes.length; i++) {
+      $(iframes[i]).unwrap();
+    }
   }
 </script>
 
@@ -110,7 +124,7 @@ query_posts(
 );
 ?>
 
-<div class="row g-0" id="services">
+<div class="row g-0 pt-sm" id="services">
   <?php
   if ( have_posts() ) :
     while (have_posts() ) : the_post();
