@@ -145,6 +145,37 @@ function save_position_metabox_data($post_id, $post) {
 
 add_action('save_post', 'save_position_metabox_data', 10, 2);
 
+// Creating Work Service Type Taxonomy
+// ================================================
+function create_work_service_taxonomy() {
+  $labels = array(
+    'name' => 'Service Types',
+    'singular_name' => 'Service Type',
+    'search_items' => 'Search Service Types',
+    'all_items' => 'All Service Types',
+    'parent_item' => 'Parent Service Type',
+    'parent_item_colon' => 'Parent Service Type:',
+    'edit_item' => 'Edit Service Type',
+    'update_item' => 'Update Service Type',
+    'add_new_item' => 'Add new Service Type',
+    'new_item_name' => 'New Service Type Name',
+    'menu_name' => 'Service Type'
+  );
+
+  register_taxonomy(
+    'service-type',
+    array('work'),
+    array(
+      'hierarchical' => true,
+      'labels' => $labels,
+      'show_ui' => true
+    )
+  );
+}
+
+add_action('init', 'create_work_service_taxonomy', 0);
+
+
 // Creating Work Taxonomy for videos
 // ================================================
 function create_video_taxonomy() {

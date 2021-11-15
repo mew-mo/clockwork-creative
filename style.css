@@ -245,6 +245,13 @@ nav {
   height: 300px;
 }
 
+iframe {
+  height: 300px;
+  width: 300px;
+  resize: both;
+  overflow: auto;
+}
+
 .fp-video iframe {
   display: block;
   width: 100%;
@@ -394,6 +401,23 @@ nav {
   100% {
     opacity: 1;
   }
+}
+
+/* work-template.php */
+/* ====================================================== */
+
+.work-row iframe {
+  height: 85%;
+  width: 100%;
+}
+
+.work-img {
+  width: 100%;
+  height: auto;
+}
+
+.work-title h5 {
+  text-align: right;
 }
 
 /* footer.php */
