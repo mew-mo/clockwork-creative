@@ -386,10 +386,22 @@ function col_css() {
   ?>
   <style type="text/css">
 
+  .woocommerce button.button.alt:hover,
+  a.added_to_cart,
+  .woocommerce-loop-product__title,
+  .woocommerce a.button:hover,
+  .woocommerce-info::before,
+  button#wpforms-submit-128:hover,
+  .single-work a:hover,
+  .work-row a:hover,
+  .work-row p:hover,
+  .cc-btn:hover,
+  .cc-btn:hover a,
   .col-main {
     color: <?php echo $main ?>;
   }
 
+  .woocommerce a.button,
   .col-dark {
     color: <?php echo $dark ?>;
   }
@@ -398,24 +410,42 @@ function col_css() {
     color: <?php echo $light ?>;
   }
 
+  .woocommerce ul.products li.product .price,
+  .single-work a,
+  .work-row a,
+  .work-row p,
   .col-grey {
     color: <?php echo $grey ?>;
   }
 
+  .social-icon:hover,
   .bg-col-main {
     background: <?php echo $main ?>;
   }
 
+  .single-work-img,
+  .single-work iframe,
+  .work-row iframe,
+  .work-img,
   .bg-col-dark {
     background: <?php echo $dark ?>;
   }
 
+  body,
   .bg-col-light {
     background: <?php echo $light ?>;
   }
 
   .bg-col-grey {
     background: <?php echo $grey ?>;
+  }
+
+  .service-col {
+    border-bottom: 120px solid <?php echo $light ?>;
+  }
+
+  .woocommerce-info {
+    border-top-color: <?php echo $main ?>;
   }
 
   </style>
@@ -506,7 +536,6 @@ function fp_content_customize($wp_customize) {
 
   // // Heading Text Position
   // // ========
-
   $wp_customize->add_setting('heading-pos', array(
     'default' => 'topleft'
   ));
@@ -555,9 +584,8 @@ function fp_content_customize($wp_customize) {
       'priority' => 80
     ));
 
-  //   // Intro txt content
+  //   // Service Column Number (width of columns)
   //   // ========
-
     $wp_customize->add_setting('col-no', array(
       'default' => 2
     ));

@@ -29,4 +29,13 @@ Template Name: Contact Us
   </div>
 </div>
 
+<script type="text/javascript">
+	var subbtn = document.querySelector('.wpforms-submit');
+
+	subbtn.innerHTML += `<span class="material-icons-outlined" class="col-grey">
+	arrow_right_alt
+	</span>`;
+
+</script>
+
  <?php get_footer(); ?>
