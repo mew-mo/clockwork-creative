@@ -532,6 +532,7 @@ button#wpforms-submit-128 {
 /* ====================================================== */
 .woocommerce-info {
   border-top-color: var(--main);
+  height: 60vh;
 }
 
 .woocommerce-info::before {
