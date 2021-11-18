@@ -386,6 +386,10 @@ function col_css() {
   ?>
   <style type="text/css">
 
+  .mobile-nav-open a:hover,
+  .woocommerce-cart-form__cart-item a:hover,
+  .woocommerce-info a,
+  span.posted_in a,
   .woocommerce button.button.alt:hover,
   a.added_to_cart,
   .woocommerce-loop-product__title,
@@ -406,6 +410,8 @@ function col_css() {
     color: <?php echo $dark ?>;
   }
 
+  .mobile-nav-open a,
+  .mobile-nav-open li,
   .col-light {
     color: <?php echo $light ?>;
   }
@@ -440,9 +446,11 @@ function col_css() {
     background: <?php echo $grey ?>;
   }
 
-  .service-col {
-    border-bottom: 120px solid <?php echo $light ?>;
-  }
+  <?php if ($light): ?>
+    .service-col {
+      border-bottom: 120px solid <?php echo $light ?>;
+    }
+  <?php endif; ?>
 
   .woocommerce-info {
     border-top-color: <?php echo $main ?>;

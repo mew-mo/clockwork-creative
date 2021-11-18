@@ -59,13 +59,22 @@ if ( post_password_required() ) {
 		 * @hooked WC_Structured_Data::generate_product_data() - 60
 		 */
 
-		 function woocommerce_template_product_description() {wc_get_template( 'single-product/tabs/description.php' );}
+		function woocommerce_template_product_description() {wc_get_template( 'single-product/tabs/description.php' );}
 
 		add_action( 'woocommerce_single_product_summary', 'woocommerce_template_product_description', 10 );
 
 		do_action( 'woocommerce_single_product_summary' );
 
 		?>
+
+		<a href="<?php echo get_page_link(get_page_by_path('cart'));?>" class="col-grey">
+			<div class="cc-btn mt-sm col-grey sub-cc-btn">
+				view cart
+					<span class="material-icons-outlined" class="col-grey">
+					arrow_right_alt
+					</span>
+			</div>
+		</a>
 	</div>
 
 	<?php

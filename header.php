@@ -16,7 +16,8 @@
 	</head>
 
   <!-- nav -->
-	<nav class="navbar navbar-expand-lg bg-col-light">
+	<div class="get-navbar-to-stay">
+		<nav class="navbar navbar-expand-lg bg-col-light">
 
 		<a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="
 			<?php
@@ -33,17 +34,45 @@
 				<?php wp_nav_menu($menu_args); ?>
       </div>
 		</div>
+
+		<div class="mobile-nav">
+			<span class="material-icons-outlined col-dark">
+				menu
+			</span>
+		</div>
 	</nav>
+</div>
   <!-- ENDNAV  -->
+
+	<div class="mobile-nav-open bg-col-dark col-light">
+		<div class="vertical-menu">
+			<?php $menu_args = ['theme_location' => 'primary', 'menu_class' => 'navbar-nav']; ?>
+			<?php wp_nav_menu($menu_args); ?>
+		</div>
+	</div>
 
 	<script>
 		var menuItems = document.querySelector('#menu-main-menu').children;
+		var mobileNav = document.querySelector('.mobile-nav');
+		var openNav = document.querySelector('.mobile-nav-open');
+		var isOpen = false;
 
 		for (var i = 0; i < menuItems.length; i++) {
 			menuItems[i].classList.add('nav-item');
 			menuItems[i].children[0].classList.add('nav-link');
       menuItems[i].children[0].classList.add('col-dark');
 		}
+
+		mobileNav.addEventListener('click', () => {
+			if (!isOpen) {
+				openNav.style.marginLeft = '0';
+				isOpen = true;
+			} else if (isOpen) {
+				openNav.style.marginLeft = '100vw';
+				isOpen = false;
+			}
+		}, false);
+
 	</script>
 
  	<!-- starting the body -->

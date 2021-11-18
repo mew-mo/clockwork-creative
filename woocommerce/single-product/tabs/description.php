@@ -29,4 +29,4 @@ $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Descri
 
 <?php the_content(); ?>
 
-<div class="mt"></div>
+<div class="mt-sm"></div>
