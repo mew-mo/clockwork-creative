@@ -116,4 +116,11 @@ get_footer(); ?>
 			</span>`;
 		}
 	}
+
+	for (var i = 0; i < menuItems.length; i++) {
+		menuItems[i].classList.add('nav-item');
+		menuItems[i].children[0].classList.add('nav-link');
+		menuItems[i].children[0].classList.add('col-dark');
+	}
+
 </script>

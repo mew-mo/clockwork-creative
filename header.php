@@ -55,6 +55,7 @@
 		var menuItems = document.querySelector('#menu-main-menu').children;
 		var mobileNav = document.querySelector('.mobile-nav');
 		var openNav = document.querySelector('.mobile-nav-open');
+		var wholeNav = document.querySelector('.get-navbar-to-stay');
 		var isOpen = false;
 
 		for (var i = 0; i < menuItems.length; i++) {
@@ -66,9 +67,15 @@
 		mobileNav.addEventListener('click', () => {
 			if (!isOpen) {
 				openNav.style.marginLeft = '0';
+				wholeNav.style.position = 'fixed';
+				wholeNav.style.zIndex = '9999';
+				wholeNav.style.width = '100vw';
 				isOpen = true;
 			} else if (isOpen) {
 				openNav.style.marginLeft = '100vw';
+				wholeNav.style.position = 'inherit';
+				wholeNav.style.zIndex = '50';
+				wholeNav.style.width = '100vw';
 				isOpen = false;
 			}
 		}, false);

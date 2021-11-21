@@ -18,14 +18,6 @@ Tags: clockwork creative, creative storytelling, video production, digital creat
 
 */
 
-/* NOTE: YEAh.
-
-box-shadow: -1px 14px 46px -2px rgba(0,0,0,0.36);
--webkit-box-shadow: -1px 14px 46px -2px rgba(0,0,0,0.36);
--moz-box-shadow: -1px 14px 46px -2px rgba(0,0,0,0.36);
-
- */
-
 /* universal elements */
 /* ===================== */
 body {
@@ -142,7 +134,7 @@ body,
   background: var(--grey);
 }
 
-/* padding classes :) */
+/* padding / margin classes */
 /* ===================== */
 
 .content-padded {
@@ -420,7 +412,7 @@ iframe {
 /* ====================================================== */
 
 .team-member-container {
-  height: 55vh;
+  height: 65vh;
 }
 
 .team-img-container img {
@@ -728,17 +720,39 @@ footer {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 
+  * {
+    font-size: 10px;
+  }
+
   .content-padded {
     padding: 30px;
+  }
+
+  .title span {
+    font-size: 6rem;
   }
 
   /* header.php */
   /* ================ */
 
   .get-navbar-to-stay {
-    position: fixed;
+    position: inherit;
     z-index: 9999;
     width: 100vw;
+    top: 0;
+  }
+
+  nav {
+    height: 70px;
+  }
+
+  #logo {
+    max-height: 50px;
+    width: auto;
+  }
+
+  .navbar-brand {
+    margin-left: 30px;
   }
 
   .mobile-nav {
@@ -774,6 +788,10 @@ footer {
     transition: all 280ms ease-in-out;
   }
 
+  .vertical-menu {
+    margin-top: 100px;
+  }
+
   /* front-page.php */
   /* ================ */
 
@@ -782,7 +800,11 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-position: center;
+    background-position: top;
+  }
+
+  .hero-txt {
+    text-align: center !important;
   }
 
   .fp-video iframe {
@@ -814,11 +836,7 @@ footer {
   }
 
   iframe:first-child {
-    padding-top: 30px;
-  }
-
-  iframe:last-child {
-    margin-top: -200px;
+    margin-top: -130px;
   }
 
   /* about-template.php */
@@ -832,7 +850,7 @@ footer {
   /* ================ */
 
   .team-member-container {
-    height: 120vh;
+    height: 170vh;
   }
 
   .info-2 {
@@ -847,11 +865,23 @@ footer {
     width: 100%;
   }
 
+  .contact-title {
+    margin-top: 50px;
+  }
+
+  .contact-txt {
+    margin-left: 20px;
+  }
+
   /* cart.php */
   /* ================ */
 
   .checkout-row {
     min-height: auto;
+  }
+
+  .wp-post-image {
+    margin-top: 50px;
   }
 
   /* footer.php */
@@ -863,9 +893,7 @@ footer {
   }
 
   .socials-col {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: 18%;
   }
 
   .social-icon {
@@ -889,9 +917,10 @@ footer {
   /* ================ */
 
   .get-navbar-to-stay {
-    /* position: fixed; */
+    position: fixed;
     z-index: 9999;
     width: 100vw;
+    top: 0;
   }
 
   .mobile-nav {
@@ -935,7 +964,74 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-position: center;
+    background-position: top 50% right 50%;;
+  }
+
+  .hero-txt {
+    text-align: center;
+  }
+
+  .fp-video iframe {
+    display: block;
+    width: 100%;
+    height: 100vw;
+    border: none;
+  }
+
+  .sub-video {
+    margin-top: 0;
+  }
+
+  .sub-row {
+    margin-top: 130px;
+  }
+
+  .ft-row {
+    height: auto;
+  }
+
+  /* team-template.php */
+  /* ================ */
+
+  .team-member-container {
+    height: 120vh;
+  }
+
+  .info-2 {
+    display: none;
+    padding-right: 20px;
+  }
+
+  /* single-product.php */
+  /* ================ */
+  .product_title {
+    margin-top: -70px;
+  }
+
+
+  /* contact-template.php */
+  /* ================ */
+  #wpforms-128,
+  #wpforms-submit-128 {
+    margin-left: 30%;
+  }
+
+  /* footer.php */
+  /* ================ */
+
+  footer {
+    height: auto;
+    text-align: center;
+  }
+
+  .socials-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-icon {
+    margin: 0 30px 30px 30px;
   }
 
 }

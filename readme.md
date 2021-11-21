@@ -9,6 +9,8 @@
 * Contact Form by WPForms
 * Easy Google Fonts
 * Logo Slider WP
+* All in One WP Migration (version 6.7)
+(https://webhostingadvices.com/all-in-one-wp-migration-import-stuck/)
 
 ## page structure
 *note- menu must be named "main menu" to link to css properly*
