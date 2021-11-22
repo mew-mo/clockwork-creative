@@ -839,6 +839,18 @@ footer {
     margin-top: -130px;
   }
 
+  /* work-template.php */
+  /* ================ */
+
+  .work-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .term-tag {
+    font-size: 2rem;
+  }
+
   /* about-template.php */
   /* ================ */
 
@@ -871,6 +883,13 @@ footer {
 
   .contact-txt {
     margin-left: 20px;
+  }
+
+  /* archive-product.php */
+  /* ================ */
+
+  select.orderby {
+    margin-left: 25%;
   }
 
   /* cart.php */
@@ -932,6 +951,7 @@ footer {
   .mobile-nav-open {
     display: flex;
     position: fixed;
+    top: 0;
     z-index: 999;
     align-items: center;
     justify-content: center;
