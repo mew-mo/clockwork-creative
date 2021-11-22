@@ -200,6 +200,7 @@ button#wpforms-submit-128:hover span,
 .term-tag {
   font-weight: 300;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 /* header.php */
@@ -235,7 +236,7 @@ nav {
 
 .movemenu {
   float: right;
-  margin-left: 60%;
+  margin-left: 50%;
 }
 
 .movemenu li {
@@ -283,6 +284,10 @@ iframe {
 
 .sub-row {
   height: 30%;
+}
+
+.sub-row img {
+  background: none;
 }
 
 .fp-video iframe {
@@ -377,7 +382,7 @@ iframe {
 /* ====================================================== */
 
 .abt-txt-container {
-  margin-top: 30%;
+  margin-top: 20%;
 }
 
 .abt-img {
@@ -451,6 +456,10 @@ iframe {
   width: 100%;
   background: var(--dark);
   padding: 70px 0;
+}
+
+.work-img {
+  height: auto;
 }
 
 .work-row a,
@@ -736,7 +745,6 @@ footer {
   /* ================ */
 
   .get-navbar-to-stay {
-    position: inherit;
     z-index: 9999;
     width: 100vw;
     top: 0;
@@ -744,6 +752,9 @@ footer {
 
   nav {
     height: 70px;
+    box-shadow: -1px 4px 46px -18px rgb(0 0 0 / 36%);
+    -webkit-box-shadow: -1px 4px 46px -18px rgb(0 0 0 / 36%);
+    -moz-box-shadow: -1px 4px 46px -18px rgb(0 0 0 / 36%);
   }
 
   #logo {
@@ -765,6 +776,7 @@ footer {
     display: flex;
     position: fixed;
     z-index: 999;
+    top: 0;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -800,7 +812,7 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-position: top;
+    background-position: top 35% right 65%;
   }
 
   .hero-txt {
@@ -851,6 +863,17 @@ footer {
     font-size: 2rem;
   }
 
+  .work-box {
+    padding-top: 20px;
+  }
+
+  /* .single-work.php */
+  /* ================ */
+
+  .vid-work-box {
+  margin-top: 170px;
+  }
+
   /* about-template.php */
   /* ================ */
 
@@ -892,6 +915,10 @@ footer {
     margin-left: 25%;
   }
 
+  input.input-text.qty {
+    width: 50px !important;
+  }
+
   /* cart.php */
   /* ================ */
 
@@ -899,7 +926,7 @@ footer {
     min-height: auto;
   }
 
-  .wp-post-image {
+  .woocommerce-product-gallery__image img {
     margin-top: 50px;
   }
 
@@ -936,7 +963,7 @@ footer {
   /* ================ */
 
   .get-navbar-to-stay {
-    position: fixed;
+    position: inherit;
     z-index: 9999;
     width: 100vw;
     top: 0;
@@ -1022,12 +1049,22 @@ footer {
     padding-right: 20px;
   }
 
+  /* work-template.php */
+  /* ================ */
+  .work-box {
+    padding-top: 80px;
+  }
+
+  .work-img {
+    width: 100%;
+    height: auto;
+  }
+
   /* single-product.php */
   /* ================ */
   .product_title {
     margin-top: -70px;
   }
-
 
   /* contact-template.php */
   /* ================ */

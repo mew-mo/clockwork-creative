@@ -30,7 +30,7 @@
      if ($postcount == 1 || $postcount == 2) {
      ?>
 
-   <div class="col-md-6 col-sm-12 mt">
+   <div class="col-md-6 col-sm-12 mt work-box">
      <a href="<?php the_permalink();?>">
      <div class="work-title">
        <h5 class="col-main text-right"><?php the_title(); ?></h5>
@@ -46,19 +46,19 @@
        <p class="col-dark">
          <?php
           if (get_post_format() == false) {
-            echo 'Image ';
+            echo 'Image • ';
           } else {
-           echo 'Video ';
-           echo get_the_term_list($post->ID, 'video-type', '', ' ', '');
+           echo 'Video • ';
+           echo get_the_term_list($post->ID, 'video-type', '', ', ', '');
           }?>
-         <?php echo get_the_term_list($post->ID, 'service-type', '', ' ', ''); ?>
+         <?php echo get_the_term_list($post->ID, 'service-type', '', ', ', ''); ?>
         </p>
      </div>
     </a>
    </div>
 
  <?php } else { ?>
-   <div class="col-md-3 col-sm-12 mt pt">
+   <div class="col-md-3 col-sm-12 mt pt work-box">
      <a href="<?php the_permalink();?>">
      <div class="work-title">
        <h5 class="col-main"><?php the_title(); ?></h5>
@@ -74,11 +74,11 @@
        <p class="col-dark d-inline-block">
          <?php
           if (get_post_format() == false) {
-            echo 'Image';
+            echo 'Image • ';
           } else {
-           echo 'Video';
+           echo 'Video • ';
           }?>
-         <?php echo get_the_term_list($post->ID, 'service-type', '', ' ', ''); ?>
+         <?php echo get_the_term_list($post->ID, 'service-type', '', ', ', ''); ?>
         </p>
      </div>
      </a>

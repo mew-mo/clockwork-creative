@@ -24,7 +24,7 @@ Template Name: About Us
          </div>
 
          <div class="cc-btn mt col-grey">
-           next
+           Read More
            <span class="material-icons-outlined">
            arrow_right_alt
            </span>

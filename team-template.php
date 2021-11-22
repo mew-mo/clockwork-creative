@@ -90,9 +90,23 @@ Template Name: Team
 
   <script type="text/javascript">
 
+    var mediaQuery = window.matchMedia('(max-width: 600px)');
+    var member = document.querySelectorAll('.team-member-container');
+
+    if (mediaQuery.matches) {
+      for (var i = 0; i < member.length; i++) {
+        member[i].style.height = '90vh';
+        console.log('LITTLE IT');
+      }
+    }
+
     window.addEventListener('click', (e) => {
       console.dir(e.target);
+
       if (e.target.classList.contains('team-more')) {
+        if (mediaQuery.matches) {
+          e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '170vh';
+        }
 
         e.target.parentNode.parentNode.children[0].style.display = 'none';
 
@@ -102,12 +116,17 @@ Template Name: Team
       }
 
       if (e.target.classList.contains('team-back')) {
+        if (mediaQuery.matches) {
+          e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '90vh';
+        }
+
         e.target.parentNode.parentNode.children[1].style.display = 'none';
 
         e.target.parentNode.parentNode.children[0].style.display = 'block';
 
         e.target.parentNode.parentNode.children[0].style.animation = 'fade_in_show 1s';
       }
+
     }, false);
 
   </script>

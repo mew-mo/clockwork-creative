@@ -11,19 +11,21 @@
     </div>
   </a>
 
-  <div class="col-12 single-work mt">
+  <div class="col-12 single-work mt <?php if (has_post_format('video')) {
+    echo 'vid-work-box';
+  }?>">
     <?php echo the_post_thumbnail('medium_large', ['class' => 'single-work-img']); ?>
     <p class="col-dark"><?php the_content();?></p>
   </div>
   <p class="col-dark">
     <?php
      if (get_post_format() == false) {
-       echo 'Image ';
+       echo 'Image • ';
      } else {
-      echo 'Video ';
-      echo get_the_term_list($post->ID, 'video-type', '', ' ', '');
+      echo 'Video • ';
+      echo get_the_term_list($post->ID, 'video-type', '', ', ', '');
      }?>
-    <?php echo get_the_term_list($post->ID, 'service-type', '', ' ', ''); ?>
+    <?php echo get_the_term_list($post->ID, 'service-type', '', ', ', ''); ?>
    </p>
 </div>
 

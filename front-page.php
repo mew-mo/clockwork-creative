@@ -108,7 +108,6 @@
 <script>
   if (document.querySelector('iframe')) {
     var iframes  = document.querySelectorAll('iframe');
-    console.log(iframes);
     for (var i = 0; i < iframes.length; i++) {
       $(iframes[i]).unwrap();
     }
