@@ -57,7 +57,7 @@
   );
   ?>
 
-  <div class="col-md-6 col-sm-12">
+  <div class="col-md-6 col-sm-12 middle-work-col">
   <?php
   if ( have_posts() ) : $postcount = 0;
     while (have_posts() ) : the_post();

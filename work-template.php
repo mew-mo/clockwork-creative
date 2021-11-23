@@ -45,6 +45,7 @@ Template Name: Our Work
        ?>
        <div class="d-inline">
          <p class="col-dark">
+           <span class="col-light bg-col-main work-tags"> Tags: </span>
            <?php
             if (get_post_format() == false) {
               echo 'Image • ';
@@ -73,6 +74,7 @@ Template Name: Our Work
        ?>
        <div class="d-inline-block">
          <p class="col-dark d-inline-block">
+           <span class="col-light bg-col-main work-tags"> Tags: </span>
            <?php
             if (get_post_format() == false) {
               echo 'Image • ';
@@ -98,12 +100,11 @@ Template Name: Our Work
 <script>
   if (document.querySelector('iframe')) {
     var iframes  = document.querySelectorAll('iframe');
-    console.log(iframes);
     for (var i = 0; i < iframes.length; i++) {
       $(iframes[i]).unwrap();
     }
   }
 </script>
 
-<div class="pt"></div>
+<div class="pt mt"></div>
  <?php get_footer(); ?>

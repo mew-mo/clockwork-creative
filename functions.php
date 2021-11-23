@@ -290,10 +290,12 @@ function nav_css() {
       background: <?php echo $nav_bg_color ?> !important;
     }
 
+    .mobile-nav span,
     .menu-item .nav-link {
       color: <?php echo $navlink_color ?> !important;
     }
 
+    .mobile-nav span:hover,
     .menu-item .nav-link:hover,
     .menu-item .nav-link:active {
       color: <?php echo $navlink_hover_color ?> !important;
@@ -405,17 +407,23 @@ function col_css() {
     color: <?php echo $main ?>;
   }
 
+  span.posted_in,
+  .entry-summary p,
+  .woocommerce-result-count,
+  .service-overlay p,
+  .info-2 p,
   .woocommerce a.button,
   .col-dark {
-    color: <?php echo $dark ?>;
+    color: <?php echo $dark ?> !important;
   }
 
   .mobile-nav-open a,
   .mobile-nav-open li,
   .col-light {
-    color: <?php echo $light ?>;
+    color: <?php echo $light ?> !important;
   }
 
+  .woocommerce button.button.alt,
   .woocommerce ul.products li.product .price,
   .single-work a,
   .work-row a,
@@ -636,11 +644,11 @@ function hero_css() {
     }
 
     .title {
-      color: <?php echo $title_col?>;
+      color: <?php echo $title_col?> !important;
     }
 
     .tagline {
-      color: <?php echo $tag_col?>;
+      color: <?php echo $tag_col?> !important;
     }
 
     <?php

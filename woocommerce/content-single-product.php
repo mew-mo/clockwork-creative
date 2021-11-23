@@ -105,6 +105,7 @@ if ( post_password_required() ) {
 	}
 
 	btn.classList.add('cc-btn');
+	btn.classList.add('col-grey');
 	btn.innerHTML += `<span class="material-icons-outlined" class="col-grey">
 	arrow_right_alt
 	</span>`;

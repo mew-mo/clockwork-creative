@@ -106,7 +106,7 @@ a {
 }
 
 .col-dark {
-  color: var(--dark);
+  color: var(--dark) !important;
 }
 
 .col-light {
@@ -219,7 +219,9 @@ button#wpforms-submit-128:hover span,
 }
 
 #logo {
-  width: 200px;
+  max-height: 70px;
+  width: auto;
+  /* width: 200px; */
 }
 
 .navbar-brand {
@@ -236,7 +238,7 @@ nav {
 
 .movemenu {
   float: right;
-  margin-left: 50%;
+  margin-left: 47%;
 }
 
 .movemenu li {
@@ -449,6 +451,11 @@ iframe {
 
 /* work-template.php */
 /* ====================================================== */
+
+.work-tags {
+  padding: 0 5px;
+  margin-right: 5px;
+}
 
 .work-row iframe,
 .work-img {
@@ -826,20 +833,8 @@ footer {
     border: none;
   }
 
-  .sub-video {
-    margin-top: 0;
-  }
-
-  .sub-row {
-    margin-top: 130px;
-  }
-
-  .ft-row {
-    height: auto;
-  }
-
-  .sub-row {
-    height: auto;
+  .middle-work-col {
+    display: none;
   }
 
   .middle-section h5,
@@ -898,6 +893,17 @@ footer {
 
   .form-msg textarea#wpforms-128-field_2 {
     width: 100%;
+  }
+
+  .form-name input#wpforms-128-field_0,
+  .form-name input#wpforms-128-field_0-last,
+  .form-email input#wpforms-128-field_1,
+  .form-msg textarea#wpforms-128-field_2 {
+    margin-top: 30px;
+    border: 1px solid var(--grey);
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
   }
 
   .contact-title {
@@ -1018,23 +1024,8 @@ footer {
     text-align: center;
   }
 
-  .fp-video iframe {
-    display: block;
-    width: 100%;
-    height: 100vw;
-    border: none;
-  }
-
-  .sub-video {
-    margin-top: 0;
-  }
-
-  .sub-row {
-    margin-top: 130px;
-  }
-
-  .ft-row {
-    height: auto;
+  .middle-work-col {
+    display: none;
   }
 
   /* team-template.php */
@@ -1070,7 +1061,24 @@ footer {
   /* ================ */
   #wpforms-128,
   #wpforms-submit-128 {
-    margin-left: 30%;
+    margin-left: 10%;
+  }
+
+  .form-name input#wpforms-128-field_0,
+  .form-name input#wpforms-128-field_0-last {
+    width: 170%;
+  }
+
+  .form-name input#wpforms-128-field_0-last {
+    margin-left: 70%;
+  }
+
+  div.wpforms-container-full .wpforms-form input.wpforms-field-medium {
+    max-width: 100% !important;
+  }
+
+  .form-msg textarea#wpforms-128-field_2 {
+    width: 100%;
   }
 
   /* footer.php */

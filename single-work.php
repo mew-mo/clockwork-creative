@@ -18,6 +18,7 @@
     <p class="col-dark"><?php the_content();?></p>
   </div>
   <p class="col-dark">
+    <span class="col-light bg-col-main work-tags"> Tags: </span>
     <?php
      if (get_post_format() == false) {
        echo 'Image • ';

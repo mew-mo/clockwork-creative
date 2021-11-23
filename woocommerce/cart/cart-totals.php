@@ -26,13 +26,13 @@ defined( 'ABSPATH' ) || exit;
 
 	<table cellspacing="0" class="shop_table shop_table_responsive">
 
-		<tr class="cart-subtotal">
+		<tr class="cart-subtotal col-dark">
 			<th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
 			<td data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
-			<tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+			<tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?> col-dark">
 				<th><?php wc_cart_totals_coupon_label( $coupon ); ?></th>
 				<td data-title="<?php echo esc_attr( wc_cart_totals_coupon_label( $coupon, false ) ); ?>"><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
 			</tr>
@@ -94,7 +94,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
-		<tr class="order-total">
+		<tr class="order-total col-dark">
 			<th><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
 			<td data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>

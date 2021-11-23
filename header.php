@@ -80,6 +80,17 @@
 			}
 		}, false);
 
+		window.addEventListener('click', (e) => {
+			if (e.target.innerHTML == "Services") {
+				console.log('HASHED');
+				openNav.style.marginLeft = '100vw';
+				wholeNav.style.position = 'inherit';
+				wholeNav.style.zIndex = '50';
+				wholeNav.style.width = '100vw';
+				isOpen = false;
+			}
+		}, false);
+
 	</script>
 
  	<!-- starting the body -->

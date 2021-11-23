@@ -91,21 +91,31 @@ Template Name: Team
   <script type="text/javascript">
 
     var mediaQuery = window.matchMedia('(max-width: 600px)');
+    var mediaTablet = window.matchMedia('(max-width: 950px)');
     var member = document.querySelectorAll('.team-member-container');
 
     if (mediaQuery.matches) {
       for (var i = 0; i < member.length; i++) {
         member[i].style.height = '90vh';
+      }
+    }
+
+    if (mediaTablet.matches) {
+      for (var i = 0; i < member.length; i++) {
+        member[i].style.height = '80vh';
         console.log('LITTLE IT');
       }
     }
 
     window.addEventListener('click', (e) => {
-      console.dir(e.target);
 
       if (e.target.classList.contains('team-more')) {
         if (mediaQuery.matches) {
           e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '170vh';
+        }
+
+        if (mediaTablet.matches) {
+          e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '130vh';
         }
 
         e.target.parentNode.parentNode.children[0].style.display = 'none';
@@ -118,6 +128,10 @@ Template Name: Team
       if (e.target.classList.contains('team-back')) {
         if (mediaQuery.matches) {
           e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '90vh';
+        }
+
+        if (mediaTablet.matches) {
+          e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '80vh';
         }
 
         e.target.parentNode.parentNode.children[1].style.display = 'none';
