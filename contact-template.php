@@ -13,14 +13,15 @@ Template Name: Contact Us
   <div class="row">
     <div class="col-md-6 col-sm-12">
       <h4 class="col-main contact-title">Contact Us</h4>
-      <p class="col-grey contact-txt mt">
-        +64 021 934 484 <br>
-        steve@clockworkcreativeproductions.com
-        <br><br>
-        17 Garrett Street<br>
-        Te Aro<br>
-        Wellington NZ<br>
-        6011
+      <p class="col-grey contact-txt mt-sm">
+        Get in touch and we'll get back to you as soon as we can! <br><br>
+        <span class="material-icons-outlined con-icon">call</span>+64 021 934 484 <br>
+        <span class="material-icons-outlined con-icon">email</span>steve@clockworkcreativeproductions.com
+        <br>
+        <span class="material-icons-outlined con-icon">place</span>17 Garrett Street<br>
+        <span class="material-icons-outlined con-icon no-icon">place</span>Te Aro<br>
+        <span class="material-icons-outlined con-icon no-icon">place</span>Wellington NZ<br>
+        <span class="material-icons-outlined con-icon no-icon">place</span>6011
       </p>
     </div>
     <div class="col-md-6 col-sm-12">

@@ -157,6 +157,10 @@ body,
   margin-top: 30px;
 }
 
+.ml {
+  margin-left: 100px;
+}
+
 /* buttons */
 /* ===================== */
 .woocommerce button.button.alt,
@@ -282,6 +286,7 @@ iframe {
 
 .ft-row {
   height: 70%;
+  margin-bottom: 30px;
 }
 
 .sub-row {
@@ -419,7 +424,7 @@ iframe {
 /* ====================================================== */
 
 .team-member-container {
-  height: 65vh;
+  height: 45vh;
 }
 
 .team-img-container img {
@@ -691,6 +696,18 @@ span.posted_in a {
   -moz-box-shadow: -1px 14px 26px -2px rgba(0,0,0,0.36);
 }
 
+/* contact-template.php */
+/* ====================================================== */
+span.con-icon {
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+}
+
+span.con-icon.no-icon {
+  opacity: 0;
+}
+
 /* footer.php */
 /* ====================================================== */
 
@@ -880,7 +897,7 @@ footer {
   /* ================ */
 
   .team-member-container {
-    height: 170vh;
+    height: 90vh;
   }
 
   .info-2 {
@@ -890,6 +907,11 @@ footer {
 
   /* contact-template.php */
   /* ================ */
+
+  span.con-icon {
+    font-size: 15px;
+    margin-right: 5px;
+  }
 
   .form-msg textarea#wpforms-128-field_2 {
     width: 100%;
@@ -1032,7 +1054,7 @@ footer {
   /* ================ */
 
   .team-member-container {
-    height: 120vh;
+    height: 80vh;
   }
 
   .info-2 {
@@ -1059,6 +1081,7 @@ footer {
 
   /* contact-template.php */
   /* ================ */
+
   #wpforms-128,
   #wpforms-submit-128 {
     margin-left: 10%;

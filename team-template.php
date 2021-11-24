@@ -9,7 +9,7 @@ Template Name: Team
  <?php get_header(); ?>
 
  <div class="row">
-   <div class="content-padded">
+   <div class="mt ml">
      <h4 class="col-main">Our Team</h4>
    </div>
  </div>
@@ -112,10 +112,10 @@ Template Name: Team
       if (e.target.classList.contains('team-more')) {
         if (mediaQuery.matches) {
           e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '170vh';
-        }
-
-        if (mediaTablet.matches) {
+        } else if (mediaTablet.matches) {
           e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '130vh';
+        } else {
+          e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '65vh';
         }
 
         e.target.parentNode.parentNode.children[0].style.display = 'none';
@@ -128,10 +128,10 @@ Template Name: Team
       if (e.target.classList.contains('team-back')) {
         if (mediaQuery.matches) {
           e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '90vh';
-        }
-
-        if (mediaTablet.matches) {
+        } else if (mediaTablet.matches) {
           e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '80vh';
+        } else {
+          e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '45vh';
         }
 
         e.target.parentNode.parentNode.children[1].style.display = 'none';

@@ -22,7 +22,7 @@
     <div class="col-md-3 col-sm-12 socials-col">
       <div class="row">
         <div class="col-2 social-icon bg-col-light">
-          <a href="https://vimeo.com/clockworkcreativeco">
+          <a href="https://vimeo.com/clockworkcreativeprod?embedded=true&source=owner_name&owner=87750381">
             <i class="fa fa-vimeo col-dark" aria-hidden="true"></i>
           </a>
         </div>

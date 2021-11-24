@@ -84,7 +84,11 @@
   <?php } ?>
   <?php if ($postcount == 2 || $postcount == 3) { ?>
       <div class="col-md-6 col-sm-12 video-col">
-        <div class="fp-video sub-video">
+        <div class="fp-video sub-video" style="<?php
+          if (has_post_format('video')) {
+            echo 'display: flex;align-items: center;justify-content: center; height:100%;';
+          }
+        ?>">
           <?php
           if (has_post_format('video')) {
             echo the_content();

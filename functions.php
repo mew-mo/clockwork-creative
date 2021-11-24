@@ -6,6 +6,14 @@ add_theme_support('post-thumbnails');
 add_theme_support('woocommerce');
 add_theme_support('post-formats', array('video'));
 
+// removing woocommerce gallery (due to display issue)
+// =========================================
+function remove_gallery() {
+  remove_meta_box( 'woocommerce-product-images',  'product', 'side');
+}
+
+add_action( 'add_meta_boxes', 'remove_gallery', 40 );
+
 // excerpt length
 // =========================================
 function new_excerpt_length() {
@@ -608,12 +616,12 @@ function fp_content_customize($wp_customize) {
 
     $wp_customize->add_control('col-no', array(
       'label' => 'Service Column Number',
-      'description' => '1 is the smallest columns, 12 is the largest (spanning the page width)',
+      'description' => '2 are the smallest columns, 12 are the largest (spanning the page width)',
       'section' => 'fp_section',
       'settings' => 'col-no',
       'type' => 'number',
       'input_attrs' => array(
-        'min' => 1,
+        'min' => 2,
         'max' => 12
       ),
       'priority' => 90
@@ -656,6 +664,7 @@ function hero_css() {
       .hero-txt {
         margin-top: 5%;
         margin-left: 2%;
+        margin-right: 0;
         text-align: left;
       }
     <?php
@@ -667,6 +676,7 @@ function hero_css() {
       .hero-txt {
         margin-top: 32%;
         margin-left: 2%;
+        margin-right: 0;
         text-align: left;
       }
     <?php
@@ -677,7 +687,8 @@ function hero_css() {
     if ($position == 'topright') { ?>
       .hero-txt {
         margin-top: 2%;
-        margin-left: 60%;
+        margin-left: 0;
+        margin-right: 2%;
         text-align: right;
       }
     <?php
@@ -688,7 +699,8 @@ function hero_css() {
     if ($position == 'bottomright') { ?>
       .hero-txt {
         margin-top: 32%;
-        margin-left: 60%;
+        margin-left: 0;
+        margin-right: 2%;
         text-align: right;
       }
     <?php
