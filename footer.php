@@ -11,7 +11,7 @@
     </div>
 
     <div class="col-md-3 col-sm-12">
-      <p class="col-light">
+      <p class="col-light footer-address">
         17 Garrett Street <br>
         Te Aro <br>
         Wellington NZ <br>
