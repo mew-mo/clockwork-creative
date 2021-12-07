@@ -754,7 +754,16 @@ footer {
 @media only screen and (max-width: 600px) {
 
   * {
-    font-size: 10px;
+    font-size: 11px;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  p {
+    font-size: 1.7rem;
   }
 
   .content-padded {
@@ -763,6 +772,10 @@ footer {
 
   .title span {
     font-size: 6rem;
+  }
+
+  span {
+    font-size: inherit;
   }
 
   /* header.php */
@@ -861,6 +874,20 @@ footer {
 
   iframe:first-child {
     margin-top: -130px;
+  }
+
+  .service-col {
+    border-bottom: 0;
+  }
+
+  .service-title {
+    display: none;
+  }
+
+  .service-overlay {
+    max-height: 100%;
+    height: auto;
+    opacity: 1;
   }
 
   /* work-template.php */

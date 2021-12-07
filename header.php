@@ -72,7 +72,7 @@
 				wholeNav.style.width = '100vw';
 				isOpen = true;
 			} else if (isOpen) {
-				openNav.style.marginLeft = '100vw';
+				openNav.style.marginLeft = '150vw';
 				wholeNav.style.position = 'inherit';
 				wholeNav.style.zIndex = '50';
 				wholeNav.style.width = '100vw';
