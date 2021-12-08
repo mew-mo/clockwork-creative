@@ -111,7 +111,7 @@ Template Name: Team
 
       if (e.target.classList.contains('team-more')) {
         if (mediaQuery.matches) {
-          e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '170vh';
+          e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '205vh';
         } else if (mediaTablet.matches) {
           e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.style.height = '130vh';
         } else {
